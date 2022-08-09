@@ -11,7 +11,7 @@
     "build:types": "tsc --noEmit false --emitDeclarationOnly",
     "build:js": "babel src --out-dir build --extensions \".js,.ts,.tsx\" --source-maps true",
     "prepublish": "npm run build",
-    "lint": "eslint --ext .ts,.tsx ./src/",
+    "lint": "eslint --ext .ts,.tsx --fix ./src/",
     "lint-watch": "esw -w --clear --color .ts,.tsx ./src",
     "lint-autofix": "yarn run lint -- --fix",
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -52,6 +52,8 @@
     "babel-plugin-import": "^1.13.5",
     "babel-plugin-transform-rename-import": "^2.3.0",
     "eslint": "8.21",
+    "eslint-config-airbnb": "^19.0.4",
+    "eslint-config-airbnb-typescript": "^17.0.0",
     "eslint-config-react-app": "^7.0.1",
     "eslint-plugin-flowtype": "8.0",
     "eslint-plugin-import": "2.26.0",
