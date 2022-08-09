@@ -127,17 +127,11 @@ class Timeline extends React.Component<Props, {}> {
     const currentTimeChange = currentTime !== nextProps.currentTime;
 
     if (groupsChange) {
-      // eslint-disable-next-line no-console
-      console.warn(
-        "react-vis-timeline: you are trying to change 'initialGroups' prop. Please use the public api exposed with in ref",
-      );
+      this.timeline.setGroups(nextProps.initialGroups);
     }
 
     if (itemsChange) {
-      // eslint-disable-next-line no-console
-      console.warn(
-        "react-vis-timeline: you are trying to change 'initialItems' prop. Please use the public api exposed with in ref",
-      );
+      this.timeline.setItems(nextProps.initialItems);
     }
 
     if (optionsChange) {
