@@ -8,7 +8,8 @@ import type {
 	TimelineAnimationOptions,
 	TimelineGroup,
 	TimelineItem,
-	TimelineOptions
+	TimelineOptions,
+	TimelineEvents,
 } from 'vis-timeline/types';
 import 'vis-timeline/styles/vis-timeline-graph2d.min.css';
 
@@ -18,16 +19,15 @@ import _each from 'lodash/each';
 import _assign from 'lodash/assign';
 import _omit from 'lodash/omit';
 import _keys from 'lodash/keys';
-import type { CustomTime, SelectionOptions, TimelineEventsHandlers, TimelineEventsWithMissing } from './models';
+import type { CustomTime, SelectionOptions, TimelineEventsHandlers } from './models';
 
 const noop = function () {};
 
-const events: TimelineEventsWithMissing[] = [
+const events: TimelineEvents[] = [
 	'currentTimeTick',
 	'click',
 	'contextmenu',
 	'doubleClick',
-	'dragover',
 	'drop',
 	'mouseOver',
 	'mouseDown',
@@ -42,8 +42,6 @@ const events: TimelineEventsWithMissing[] = [
 	'itemout',
 	'timechange',
 	'timechanged',
-	'markerchange',
-	'markerchanged'
 ];
 
 const eventDefaultProps: TimelineEventsHandlers = {};

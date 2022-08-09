@@ -1,30 +1,26 @@
-import type { TimelineAnimationOptions, TimelineEvents } from 'vis-timeline/types';
+import type { TimelineAnimationOptions } from 'vis-timeline/types';
 
-export type TimelineEventsWithMissing = TimelineEvents | 'dragover' | 'markerchange' | 'markerchanged';
 export type TimelineEventHandler =
-	| 'currentTimeTickHandler'
+	| 'changedHandler'
 	| 'clickHandler'
 	| 'contextmenuHandler'
+	| 'currentTimeTickHandler'
 	| 'doubleClickHandler'
-	| 'dragoverHandler'
 	| 'dropHandler'
-	| 'mouseOverHandler'
-	| 'mouseDownHandler'
-	| 'mouseUpHandler'
-	| 'mouseMoveHandler'
 	| 'groupDraggedHandler'
-	| 'changedHandler'
+	| 'itemoutHandler'
+	| 'itemoverHandler'
+	| 'mouseDownHandler'
+	| 'mouseMoveHandler'
+	| 'mouseOverHandler'
+	| 'mouseUpHandler'
 	| 'rangechangeHandler'
 	| 'rangechangedHandler'
 	| 'selectHandler'
-	| 'itemoverHandler'
-	| 'itemoutHandler'
 	| 'timechangeHandler'
-	| 'timechangedHandler'
-	| 'markerchangeHandler'
-	| 'markerchangedHandler';
+	| 'timechangedHandler';
 
-export type TimelineEventsHandlers = Partial<Record<TimelineEventHandler, Function>>;
+export type TimelineEventsHandlers = Partial<Record<TimelineEventHandler, (properties: any) => void>>;
 
 export type CustomTime = {
 	datetime: Date;
